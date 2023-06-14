@@ -228,7 +228,7 @@ class SepaCreditTransfer00100103 extends SepaCreditTransferCollection
     }
 
     function addRecursive($parent, $arr) {
-        foreach($payment['rmtInf'] as $child => $value) {
+        foreach($arr as $child => $value) {
             if(is_array($value)) {
                 $newParent = $parent->addChild($child);
                 $this->addRecursive($newParent, $value);
