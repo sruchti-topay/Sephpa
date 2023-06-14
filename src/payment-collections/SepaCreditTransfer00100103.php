@@ -217,8 +217,24 @@ class SepaCreditTransfer00100103 extends SepaCreditTransferCollection
             $cdtTrfTxInf->addChild('UltmtCdtr')->addChild('Nm', $payment['ultmtCdtr']);
         if( isset( $payment['purp'] ) )
             $cdtTrfTxInf->addChild('Purp')->addChild('Cd', $payment['purp']);
-        if( isset( $payment['rmtInf'] ) )
-            $cdtTrfTxInf->addChild('RmtInf')->addChild('Ustrd', $payment['rmtInf']);
+        if( isset( $payment['rmtInf'] ) ) {
+            if(is_array($payment['rmtInf']) && count($payment['rmtInf']) > 0) {
+                $parent = $cdtTrfTxInf->addChild('RmtInf');
+                $this->addRecursive($parent, $payment['rmtInf']);
+            } else {
+                $cdtTrfTxInf->addChild('RmtInf', $payment['rmtInf']);
+            }
+        }
     }
 
+    function addRecursive($parent, $arr) {
+        foreach($payment['rmtInf'] as $child => $value) {
+            if(is_array($value)) {
+                $newParent = $parent->addChild($child);
+                $this->addRecursive($newParent, $value);
+            } else {
+                $parent->addChild($child, $value);
+            }
+        }
+    }
 }
