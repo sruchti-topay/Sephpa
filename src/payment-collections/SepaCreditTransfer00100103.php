@@ -82,7 +82,9 @@ class SepaCreditTransfer00100103 extends SepaCreditTransferCollection
 
             $bicRequired = (!SepaUtilities::isEEATransaction($this->dbtrIban,$paymentInfo['iban']));
 
-            $checkResult = SepaUtilities::checkAndSanitizeAll(array_diff($paymentInfo, ['rmtInf']), $this->sanitizeFlags,
+			$aRmtInf = $paymentInfo['rmtInf'];
+			unset($paymentInfo['rmtInf']);
+            $checkResult = SepaUtilities::checkAndSanitizeAll($paymentInfo, $this->sanitizeFlags,
                                                               ['allowEmptyBic' => !$bicRequired]);
 
             if($checkResult !== true)
@@ -91,6 +93,11 @@ class SepaCreditTransfer00100103 extends SepaCreditTransferCollection
             // IBAN and BIC can belong to each other?
             if(!empty($paymentInfo['bic']) && !SepaUtilities::crossCheckIbanBic($paymentInfo['iban'],$paymentInfo['bic']))
                 throw new SephpaInputException('IBAN and BIC do not belong to each other.');
+
+			// Merge rmtInf back into paymentInfo
+			if (!empty($aRmtInf)) {
+				$paymentInfo = array_merge($paymentInfo, ['rmtInf' => $aRmtInf]);
+			}
         }
 
         $this->payments[] = $paymentInfo;
