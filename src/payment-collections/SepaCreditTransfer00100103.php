@@ -82,8 +82,10 @@ class SepaCreditTransfer00100103 extends SepaCreditTransferCollection
 
             $bicRequired = (!SepaUtilities::isEEATransaction($this->dbtrIban,$paymentInfo['iban']));
 
-			$aRmtInf = $paymentInfo['rmtInf'];
-			unset($paymentInfo['rmtInf']);
+            if(isset($paymentInfo['rmtInf'])) {
+                $aRmtInf = $paymentInfo['rmtInf'];
+                unset($paymentInfo['rmtInf']);
+            }
             $checkResult = SepaUtilities::checkAndSanitizeAll($paymentInfo, $this->sanitizeFlags,
                                                               ['allowEmptyBic' => !$bicRequired]);
 
