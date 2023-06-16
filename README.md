@@ -40,7 +40,7 @@ Just add
 ```json
 {
     "require": {
-        "abcaeffchen/sephpa": "^2.0"
+        "imetal/sephpa": "^2.0"
     }
 }
 ```
