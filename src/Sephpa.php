@@ -9,7 +9,7 @@
  * @author  Alexander Schickedanz <abcaeffchen@gmail.com>
  */
 
-namespace AbcAeffchen\Sephpa;
+namespace iMetal\Sephpa;
 
 use AbcAeffchen\SepaDocumentor\ControlList;
 use AbcAeffchen\SepaDocumentor\FileRoutingSlip;

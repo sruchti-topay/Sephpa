@@ -1,5 +1,5 @@
 {
-  "name": "abcaeffchen/sephpa",
+  "name": "imetal/sephpa",
   "type": "library",
   "description": "Generates SEPA files for credit transfers (pain.001.001.03, pain.001.002.03, pain.001.003.03) and direct debit (pain.008.001.02, pain.008.002.02, pain.008.003.02)",
   "keywords": [
@@ -13,17 +13,22 @@
     "php7",
     "php8"
   ],
-  "homepage": "https://github.com/AbcAeffchen/Sephpa",
+  "homepage": "https://github.com/iMetal-NL/Sephpa",
   "license": "LGPL-3.0-only",
   "authors": [
     {
       "name": "Alexander Schickedanz (AbcAeffchen)",
       "email": "abcaeffchen@gmail.com",
       "role": "Developer"
+    },
+    {
+      "name": "iMetal",
+      "email": "info@imetal.nl",
+      "role": "Developer"
     }
   ],
   "support": {
-    "issues": "https://github.com/AbcAeffchen/Sephpa/issues"
+    "issues": "https://github.com/iMetal-NL/Sephpa/issues"
   },
   "require": {
     "php": ">=7.1",
@@ -43,8 +48,8 @@
   },
   "autoload": {
     "psr-4": {
-      "AbcAeffchen\\Sephpa\\": "src/",
-      "AbcAeffchen\\Sephpa\\PaymentCollections\\": "src/payment-collections/"
+      "iMetal\\Sephpa\\": "src/",
+      "iMetal\\Sephpa\\PaymentCollections\\": "src/payment-collections/"
     }
   }
 }

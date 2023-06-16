@@ -9,7 +9,7 @@
  * @author  Alexander Schickedanz <abcaeffchen@gmail.com>
  */
 
-namespace AbcAeffchen\Sephpa\PaymentCollections;
+namespace iMetal\Sephpa\PaymentCollections;
 
 use AbcAeffchen\SepaUtilities\SepaUtilities;
 use DateTime;

@@ -9,9 +9,9 @@
  * @author  Alexander Schickedanz <abcaeffchen@gmail.com>
  */
 
-namespace AbcAeffchen\Sephpa;
+namespace iMetal\Sephpa;
 use AbcAeffchen\SepaUtilities\SepaUtilities;
-use AbcAeffchen\Sephpa\PaymentCollections\SepaPaymentCollection;
+use iMetal\Sephpa\PaymentCollections\SepaPaymentCollection;
 
 require_once __DIR__ . '/Sephpa.php';
 /**
@@ -100,7 +100,7 @@ class SephpaDirectDebit extends Sephpa
      */
     public function addCollection(array $collectionInfo) : SepaPaymentCollection
     {
-        $class = 'AbcAeffchen\Sephpa\PaymentCollections\SepaDirectDebit' . self::VERSIONS[$this->version]['class'];
+        $class = 'iMetal\Sephpa\PaymentCollections\SepaDirectDebit' . self::VERSIONS[$this->version]['class'];
         $this->paymentCollections[] = new $class($collectionInfo, $this->checkAndSanitize, $this->sanitizeFlags);
         return end($this->paymentCollections);
     }

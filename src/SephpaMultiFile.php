@@ -9,7 +9,7 @@
  * @author  Alexander Schickedanz <abcaeffchen@gmail.com>
  */
 
-namespace AbcAeffchen\Sephpa;
+namespace iMetal\Sephpa;
 
 use AbcAeffchen\SepaUtilities\SepaUtilities;
 use ZipArchive;
@@ -37,8 +37,8 @@ class SephpaMultiFile
     public function &addFile($initgPty, $msgId, $version, array $orgId = [], $initgPtyId = null, $checkAndSanitize = true) : Sephpa
     {
         $class = SepaUtilities::version2transactionType($version) === SepaUtilities::SEPA_TRANSACTION_TYPE_CT
-            ? 'AbcAeffchen\Sephpa\SephpaCreditTransfer'
-            : 'AbcAeffchen\Sephpa\SephpaDirectDebit';
+            ? 'iMetal\Sephpa\SephpaCreditTransfer'
+            : 'iMetal\Sephpa\SephpaDirectDebit';
         $this->files[] = new $class($initgPty, $msgId, $version, $orgId, $initgPtyId, $checkAndSanitize);
         return $this->files[count($this->files) - 1];
     }

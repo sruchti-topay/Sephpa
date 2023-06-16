@@ -9,7 +9,7 @@
  * @author  Alexander Schickedanz <abcaeffchen@gmail.com>
  */
 
-namespace AbcAeffchen\Sephpa;
+namespace iMetal\Sephpa;
 
 use AbcAeffchen\SepaUtilities\SepaUtilities;
 
@@ -178,8 +178,8 @@ class TestDataProvider
     public static function getFile(int $version, bool $addBIC, bool $addOptionalData, bool $checkAndSanitize, array $orgId = [], ?string $initgPtyId = null, int $numCollections = 1, int $numPayments = 3)
     {
         $fileClass = self::isCreditTransfer($version)
-            ? 'AbcAeffchen\Sephpa\SephpaCreditTransfer'
-            : 'AbcAeffchen\Sephpa\SephpaDirectDebit';
+            ? 'iMetal\Sephpa\SephpaCreditTransfer'
+            : 'iMetal\Sephpa\SephpaDirectDebit';
 
         $file = new $fileClass('Initiator Name', 'MessageID-1234', $version, $orgId,
                                $initgPtyId, $checkAndSanitize);

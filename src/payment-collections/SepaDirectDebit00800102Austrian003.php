@@ -9,9 +9,9 @@
  * @author  Alexander Schickedanz <abcaeffchen@gmail.com>
  */
 
-namespace AbcAeffchen\Sephpa\PaymentCollections;
+namespace iMetal\Sephpa\PaymentCollections;
 use AbcAeffchen\SepaUtilities\SepaUtilities;
-use AbcAeffchen\Sephpa\SephpaInputException;
+use iMetal\Sephpa\SephpaInputException;
 
 class SepaDirectDebit00800102Austrian003 extends SepaDirectDebit00800102
 {

@@ -11,7 +11,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use AbcAeffchen\Sephpa\SephpaCreditTransfer;
+use iMetal\Sephpa\SephpaCreditTransfer;
 
 function testTimeMemory()
 {
