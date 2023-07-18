@@ -13,7 +13,7 @@
     "php7",
     "php8"
   ],
-  "homepage": "https://github.com/iMetal-NL/Sephpa",
+  "homepage": "https://github.com/sruchti-topay/Sephpa",
   "license": "LGPL-3.0-only",
   "authors": [
     {
@@ -22,13 +22,13 @@
       "role": "Developer"
     },
     {
-      "name": "iMetal",
-      "email": "info@imetal.nl",
+      "name": "topay",
+      "email": "sander@topay.nl",
       "role": "Developer"
     }
   ],
   "support": {
-    "issues": "https://github.com/iMetal-NL/Sephpa/issues"
+    "issues": "https://github.com/sruchti-topay/Sephpa/issues"
   },
   "require": {
     "php": ">=7.1",
