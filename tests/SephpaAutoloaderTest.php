@@ -9,15 +9,15 @@
  * @author  Alexander Schickedanz <abcaeffchen@gmail.com>
  */
 
-use iMetal\Sephpa\SephpaCreditTransfer;
-use iMetal\Sephpa\TestDataProvider as TDP;
+use ToPay\Sephpa\SephpaCreditTransfer;
+use ToPay\Sephpa\TestDataProvider as TDP;
 
 require __DIR__ . '/../src/autoloader.php'; // path to Sephpa autoloader
 require __DIR__ . '/../vendor/abcaeffchen/sepa-utilities/src/SepaUtilities.php';    // path to sepa-utilities
 require __DIR__ . '/../tests/TestDataProvider.php';     // path to test data
 // load files that exist
-$test = new iMetal\Sephpa\SephpaDirectDebit('testParty', 'testMessageID',
-                                                 iMetal\Sephpa\SephpaDirectDebit::SEPA_PAIN_008_001_02,
+$test = new ToPay\Sephpa\SephpaDirectDebit('testParty', 'testMessageID',
+                                                 ToPay\Sephpa\SephpaDirectDebit::SEPA_PAIN_008_001_02,
                                                  TDP::getDirectDebitData(false, false));
 
 // load file without fully qualified name

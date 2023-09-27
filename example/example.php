@@ -15,7 +15,7 @@
  */
 
 use AbcAeffchen\SepaUtilities\SepaUtilities;
-use iMetal\Sephpa\{SephpaCreditTransfer, SephpaDirectDebit};
+use ToPay\Sephpa\{SephpaCreditTransfer, SephpaDirectDebit};
 
 require_once __DIR__ . '/../vendor/autoload.php';
 

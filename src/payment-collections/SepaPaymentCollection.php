@@ -9,7 +9,7 @@
  * @author  Alexander Schickedanz <abcaeffchen@gmail.com>
  */
 
-namespace iMetal\Sephpa\PaymentCollections;
+namespace ToPay\Sephpa\PaymentCollections;
 
 /**
  * Abstract class for credit transfer and debit

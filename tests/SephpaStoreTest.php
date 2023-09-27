@@ -13,9 +13,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/TestDataProvider.php';
 
 use Mpdf\MpdfException;
-use iMetal\Sephpa\{SephpaCreditTransfer, SephpaDirectDebit, SephpaInputException, SephpaMultiFile};
+use ToPay\Sephpa\{SephpaCreditTransfer, SephpaDirectDebit, SephpaInputException, SephpaMultiFile};
 
-use iMetal\Sephpa\TestDataProvider as TDP;
+use ToPay\Sephpa\TestDataProvider as TDP;
 
 class SephpaStoreTest extends PHPUnit\Framework\TestCase
 {
@@ -59,12 +59,12 @@ class SephpaStoreTest extends PHPUnit\Framework\TestCase
         $creditTransferFile = $sephpaMultiFile->addFile('Initiator Name', 'MessageID-1234',
                                                         SephpaCreditTransfer::SEPA_PAIN_001_001_03,
                                                         [], null, true);
-        static::assertSame('iMetal\Sephpa\SephpaCreditTransfer', get_class($creditTransferFile));
+        static::assertSame('ToPay\Sephpa\SephpaCreditTransfer', get_class($creditTransferFile));
 
         $directDebitFile = $sephpaMultiFile->addFile('Initiator Name', 'MessageID-1235',
                                                      SephpaDirectDebit::SEPA_PAIN_008_001_02,
                                                      [], null, true);
-        static::assertSame('iMetal\Sephpa\SephpaDirectDebit', get_class($directDebitFile));
+        static::assertSame('ToPay\Sephpa\SephpaDirectDebit', get_class($directDebitFile));
 
         $creditTransferFile->addCollection(TDP::getCreditTransferData(false, false))
                            ->addPayment(TDP::getCreditTransferPaymentData(false, false));

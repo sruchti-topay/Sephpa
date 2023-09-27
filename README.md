@@ -40,7 +40,7 @@ Just add
 ```json
 {
     "require": {
-        "imetal/sephpa": "^2.0"
+        "topay/sephpa": "^2.0"
     }
 }
 ```

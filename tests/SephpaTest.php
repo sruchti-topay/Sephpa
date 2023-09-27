@@ -16,8 +16,8 @@ require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/TestDataProvider.php';
 
 use AbcAeffchen\SepaUtilities\SepaUtilities;
-use iMetal\Sephpa\{Sephpa, SephpaCreditTransfer, SephpaDirectDebit, SephpaInputException};
-use iMetal\Sephpa\TestDataProvider as TDP;
+use ToPay\Sephpa\{Sephpa, SephpaCreditTransfer, SephpaDirectDebit, SephpaInputException};
+use ToPay\Sephpa\TestDataProvider as TDP;
 
 class ReturnReferenceTestClass
 {

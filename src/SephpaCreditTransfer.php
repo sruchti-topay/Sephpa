@@ -9,7 +9,7 @@
  * @author  Alexander Schickedanz <abcaeffchen@gmail.com>
  */
 
-namespace iMetal\Sephpa;
+namespace ToPay\Sephpa;
 use AbcAeffchen\SepaUtilities\SepaUtilities;
 
 require_once __DIR__ . '/Sephpa.php';
@@ -83,7 +83,7 @@ class SephpaCreditTransfer extends Sephpa
      */
     public function addCollection(array $collectionInfo) : PaymentCollections\SepaPaymentCollection
     {
-        $class = 'iMetal\Sephpa\PaymentCollections\SepaCreditTransfer00' . $this->version;
+        $class = 'ToPay\Sephpa\PaymentCollections\SepaCreditTransfer00' . $this->version;
         $this->paymentCollections[] = new $class($collectionInfo, $this->checkAndSanitize, $this->sanitizeFlags);
         return end($this->paymentCollections);
     }

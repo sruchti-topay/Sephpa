@@ -9,7 +9,7 @@
  * @author  Alexander Schickedanz <abcaeffchen@gmail.com>
  */
 
-namespace iMetal\Sephpa;
+namespace ToPay\Sephpa;
 
 function sephpaAutoloader($class)
 {
@@ -32,4 +32,4 @@ function sephpaAutoloader($class)
         require_once $file;
 }
 
-spl_autoload_register('iMetal\Sephpa\sephpaAutoloader');
+spl_autoload_register('ToPay\Sephpa\sephpaAutoloader');
